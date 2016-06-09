@@ -1,0 +1,155 @@
+----------
+Star Wars
+----------
+Luke Skywalker;
+Han Solo;
+Império Galáctico;
+Aliança Rebelde;
+Estrela da Morte;
+Leia Organa;
+Darth Vader;
+Tatooine;
+Obi-Wan Kenobi;
+Anakin Skywalker;
+Chewbacca;
+Stormtroopers;
+Millennium Falcon;
+Yoda;
+Jedi;
+Lightsaber;
+----------
+Pokémon
+----------
+Ash Ketchum;
+Pikachu;
+Brock;
+Misty;
+Equipe Rocket;
+Jessie;
+James;
+Meowth;
+Pikachu;
+Kanto;
+----------
+Digimon
+----------
+Digivices;
+Digimundo;
+Ilha Arquivo;
+Gennai;
+Digiescolhidos;
+Tai Kamiya;
+Agumon;
+Matt Ishida;
+Gabumon;
+Sora Takenouchi;
+Piyomon;
+Koushirou Izumi;
+Tentomon;
+Mimi Tachikawa;
+Palmon;
+Joe Kido;
+Gomamon;
+T.K. Takaishi;
+Patamon;
+Kari Kamiya;
+Tailmon;
+----------
+Game of Thrones
+----------
+Westeros;
+Trono de Ferro;
+Tyrion Lannister;
+Jaime Lannister;
+Cersei Lannister;
+Daenerys Targaryen;
+Jon Snow;
+Robb Stark;
+Catelyn Stark;
+----------
+The Big Bang Theory
+----------
+Leonard Hofstadter;
+Sheldon Cooper;
+Penny;
+Howard Wolowitz;
+Rajesh Koothrappali;
+Amy Farrah Fowler;
+Bernadette Rostenkowski;
+Stuart Bloom;
+Leslie Winkle;
+Sra. Wolowitz;
+Klingon Boggle;
+Bazinga!;
+Soft Kitty;
+----------
+Marvel
+----------
+Spiderman;
+Ironman;
+Deadpool;
+Wolverine;
+Mystique;
+Cyclops;
+Thor;
+Hulk;
+X-men;
+Coisa;
+Demolidor;
+----------
+DC Comics
+----------
+Batman;
+Superman;
+Lanterna Verde;
+Mulher Maravilha;
+Aquaman;
+Flash;
+Coringa;
+Arqueiro Verde;
+----------
+Harry Potter
+----------
+Harry Potter;
+Ronald Weasley;
+Hermione Granger;
+Hogwarts;
+J K Rowling;
+Dumbledore;
+Sonserina;
+Corvinal;
+Lufa-Lufa;
+Grifinória;
+Azkaban;
+----------
+Star Trek
+----------
+Capitão James T Kirk;
+Spock;
+Enterprise;
+Klingons;
+Vulcanos;
+Phaser;
+Dr Leonard McCoy;
+Montgomery Scott;
+Uhura;
+Hikaru Sulu;
+Pavel Chekov;
+----------
+Naruto
+----------
+Naruto Uzumaki;
+Sakura Haruno;
+Sasuke Uchiha;
+Hokage;
+Kazekage;
+Raikage;
+Mizukage;
+Tsuchikage;
+Kakashi Hatake;
+Konoha;
+Akatsuki;
+Tsunade;
+Jiraya;
+Orochimaru;
+Sharingan;
