@@ -1,0 +1,26 @@
+1 - Coloque o instalador.sh e o composer.phar na sua area de trabalho.
+2 - Abra o git bash
+3 - Digite "source /c/Users/(Seu número de matrícula, sem os parênteses)/Desktop/instalador.sh"
+4 - Siga os passos do script e pronto, agora é só configurar o banco com o link disponibilizado.
+
+Extra.1: Para executar o projeto digite: 'php app/console server:run' dentro da pasta raiz do projeto, que é onde o composer se localiza.
+
+Extra.2:Caso você feche o bash, você pode digitar "source /c/Users/(Seu número de matrícula, sem os parênteses)/Desktop/configurar.sh" disponibilizado juntamente com o instalador, para que o bash entenda os parâmetros do composer/php/git.
+
+Guilherme Matuella.
+
+
+
+
+Configurar banco de dados
+1-Acessar 127.0.0.1:8000/config.php
+2-Clicar em next ou alterar nome do banco
+3-Next
+4-Next
+5-Iniciar o Xamp (MySQL e APACHE)
+6-Acessar phpMyAdmin
+7-Criar banco com mesmo nome do item 2
+8-No bash executar o comando na pasta do projeto: "php app/console doctrine:schemma:update --force
+9-Executar comando para iniciar servidor: "php app/console server:run"
+
+VITOR E RICARDO
