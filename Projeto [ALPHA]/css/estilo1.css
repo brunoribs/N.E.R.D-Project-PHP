@@ -1,0 +1,37 @@
+* { margin: 0; padding: 0; border: 0; }
+input { background: #fff; border: 1px solid #ccc; padding: 6px;}
+#teclado { width: 400px; }
+#teclado fieldset { width: 300px; text-align: center; float: left; margin: 2px; }
+#teclado #numbers { float: right; width: 80px; }
+fieldset { margin: 5px; }
+
+body{
+	background-color: #2F4F4F;
+}
+
+h1, h2{
+	color: #FFFFFF;
+}
+
+#entrada_1{
+	opacity: 1.10;
+	text-decoration: underline;
+}
+
+.titulo{
+	text-align: center;
+}
+
+#forca{
+	width: 20%;
+	position: absolute;
+	right: 35%; 
+}
+
+#tecladoForm{
+	width: 20%;
+	position: absolute;
+	right: 35%; 
+	bottom: 5%;
+	margin: auto;
+}
