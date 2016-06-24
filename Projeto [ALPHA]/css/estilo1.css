@@ -22,16 +22,16 @@ h1, h2{
 	text-align: center;
 }
 
-#forca{
+.forca{
 	width: 20%;
 	position: absolute;
-	right: 35%; 
+	right: 35%;
 }
 
 #tecladoForm{
 	width: 20%;
 	position: absolute;
-	right: 35%; 
+	right: 35%;
 	bottom: 5%;
 	margin: auto;
 }

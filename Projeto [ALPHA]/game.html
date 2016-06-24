@@ -11,34 +11,7 @@
 
 
 	<script type="text/javascript">
-	function id( el ){
-		return document.getElementById( el );
-	}
-	function val( destino, valor ){
-		destino.value += valor;
-	}
-	var focus = false;
-	window.onload = function(){
 
-
-		var botoes = id('teclado').getElementsByTagName('input');
-		for( var i=0; i<botoes.length; i++ ){
-			botoes[i].onclick = function(){
-				if( !focus ){ alert('coloque o foco em algum input');exit(); }
-
-				val( id( focus ), this.value );
-				id( focus ).focus();
-			}
-		}
-
-		var inputs = id('area').getElementsByTagName('input');
-		for( var i=0; i<inputs.length; i++ ){
-			inputs[i].onfocus = function(){
-				focus = this.id;
-			}
-		}
-		id('entrada_1').focus();
-	}
 	</script>
 
 	<link href="css/estilo1.css" rel="stylesheet">
@@ -62,11 +35,11 @@
 		<h2 class="titulo">O jogo da forca para o público nerd!</h2>
 	</header>
 	<main>
+		<img class='forca' id='forca' src='images/00.png'/>
 
-		<img id="forca" src="images/06.png" />
-		<form action="" method="post" id="tecladoForm">
+		<form action="#" method="post" id="tecladoForm">
 			<fieldset id="area">
-				<input type="text" name="entrada_1" id="entrada_1" /></label>
+				<input type="text" name="entrada_1" id="entrada_1" />
 			</fieldset>
 			<fieldset id="teclado">
 
@@ -87,18 +60,18 @@
 					<input type="button" name="s" value="s" />
 					<input type="button" name="d" value="d" />
 					<input type="button" name="f" value="f" />
-					<input type="button" name="g" value="g" />
+					<input type="button" $("#entrada_1").html("Hello World");name="g" value="g" />
 					<input type="button" name="h" value="h" />
 					<input type="button" name="j" value="j" />
 					<input type="button" name="k" value="k" />
 					<input type="button" name="l" value="l" />
 					<input type="button" name="ç" value="ç" />
 				</fieldset>
-				<fieldset>                      
+				<fieldset>
 					<input type="button" name="z" value="z" />
 					<input type="button" name="x" value="x" />
 					<input type="button" name="c" value="c" />
-					<input type="button" name="v" value="v" />                      
+					<input type="button" name="v" value="v" />
 					<input type="button" name="b" value="b" />
 					<input type="button" name="n" value="n" />
 					<input type="button" name="m" value="m" />
@@ -106,7 +79,81 @@
 			</fieldset>
 		</form>
 
+		<script>
 
+		var tentativas = 0;
+		var palavra = "Darth Vader";
+
+		function changeImagem(){
+			if(tentativas == 1){
+				document.getElementById("forca").src="images/01.png";
+			}
+			else if(tentativas == 2){
+				document.getElementById("forca").src="images/02.png";
+			}
+			else if(tentativas == 3){
+				document.getElementById("forca").src="images/03.png";
+			}
+			else if(tentativas == 4){
+				document.getElementById("forca").src="images/04.png";
+			}
+			else if(tentativas == 5){
+				document.getElementById("forca").src="images/05.png";
+			}
+			else if(tentativas == 6){
+				document.getElementById("forca").src="images/06.png";
+			}
+		}
+
+
+
+
+
+
+
+
+
+		function id( el ){
+			return document.getElementById( el );
+		}
+		function val( destino, valor ){
+			destino.value += valor;
+		}
+		var focus = false;
+		window.onload = function(){
+
+
+			var botoes = id('teclado').getElementsByTagName('input');
+			for( var i=0; i<botoes.length; i++ ){
+				botoes[i].onclick = function(){
+					if( !focus ){ alert('coloque o foco em algum input');exit(); }
+
+					val( id( focus ), this.value );
+					tentativas++;
+					changeImagem();
+					id( focus ).focus();
+				}
+			}
+
+			var inputs = id('area').getElementsByTagName('input');
+			for( var i=0; i<inputs.length; i++ ){
+				inputs[i].onfocus = function(){
+					focus = this.id;
+				}
+			}
+			id('entrada_1').focus();
+		}
+
+
+			/*
+				default: document.write("<img id='forca' src='images/00.png'/>");
+
+			}*/
+
+
+
+
+		</script>
 
 	</main>
 	<footer>
