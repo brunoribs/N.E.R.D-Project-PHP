@@ -35,7 +35,55 @@
 		<h2 class="titulo">O jogo da forca para o público nerd!</h2>
 	</header>
 	<main>
-		<img class='forca' id='forca' src='images/00.png'/>
+	
+		<!--Modal Game Over -->
+		<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Game Over</h4>
+					</div>
+					<div class="modal-body">
+						<p>Você perdeu!&hellip;</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger">Sair</button>
+						<button type="button" class="btn btn-success" data-dismiss="modal">Reiniciar</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+		
+		
+		<!--Modal Game Win -->
+		<div class="modal fade" tabindex="-1" role="dialog" id="myModal1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Sucesso</h4>
+					</div>
+					<div class="modal-body">
+						<p>Você completou a palavra!&hellip;</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-danger">Sair</button>
+						<button type="button" class="btn btn-success" data-dismiss="modal">Reiniciar</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	
+	
+	
+	
+	
+	
+	
+	
+		<img class='forca' id='forca' src='images/00.png' alt="Imagem da forca" />
 
 
 
@@ -62,7 +110,7 @@
 					<input type="button" name="s" value="s" />
 					<input type="button" name="d" value="d" />
 					<input type="button" name="f" value="f" />
-					<input type="button" $("#entrada_1").html("Hello World");name="g" value="g" />
+					<input type="button" name="g" value="g" />
 					<input type="button" name="h" value="h" />
 					<input type="button" name="j" value="j" />
 					<input type="button" name="k" value="k" />
@@ -123,7 +171,9 @@
 				arrayLetra.push(caracter);
 
 				if(palavra.length == arrayLetra.length){
-					//Ganhou o jogo
+					$(document).ready(function(){
+						$("#myModal1").modal();
+					});
 				}
 
 			}
@@ -133,8 +183,12 @@
 				changeImagem();
 
 				if(tentativas == 6){
-					//perdeu o jogo
+					$(document).ready(function(){
+						$("#myModal").modal();
+					});
 				}
+				
+				
 			}
 		}
 
@@ -162,8 +216,6 @@
 					if( !focus ){ alert('coloque o foco em algum input');exit(); }
 
 					val( id( focus ), this.value );
-					//tentativas++;
-					//changeImagem();
 					verificaCaracter(this.value);
 					id( focus ).focus();
 				}
