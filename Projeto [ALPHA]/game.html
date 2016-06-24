@@ -37,6 +37,8 @@
 	<main>
 		<img class='forca' id='forca' src='images/00.png'/>
 
+
+
 		<form action="#" method="post" id="tecladoForm">
 			<fieldset id="area">
 				<input type="text" name="entrada_1" id="entrada_1" />
@@ -82,7 +84,16 @@
 		<script>
 
 		var tentativas = 0;
-		var palavra = "Darth Vader";
+		var palavra = "darth vader";
+		var arrayLetra = Array();
+		
+
+
+
+		if(palavra.indexOf(" ") >= 0){
+			arrayLetra.push(" ");
+		}
+
 
 		function changeImagem(){
 			if(tentativas == 1){
@@ -102,6 +113,28 @@
 			}
 			else if(tentativas == 6){
 				document.getElementById("forca").src="images/06.png";
+			}
+		}
+
+
+		function verificaCaracter(caracter){
+			if(palavra.indexOf(caracter) >= 0){
+				//Encontrado
+				arrayLetra.push(caracter);
+
+				if(palavra.length == arrayLetra.length){
+					//Ganhou o jogo
+				}
+
+			}
+			else{
+				//Não encontrado
+				tentativas++;
+				changeImagem();
+
+				if(tentativas == 6){
+					//perdeu o jogo
+				}
 			}
 		}
 
@@ -129,8 +162,9 @@
 					if( !focus ){ alert('coloque o foco em algum input');exit(); }
 
 					val( id( focus ), this.value );
-					tentativas++;
-					changeImagem();
+					//tentativas++;
+					//changeImagem();
+					verificaCaracter(this.value);
 					id( focus ).focus();
 				}
 			}
