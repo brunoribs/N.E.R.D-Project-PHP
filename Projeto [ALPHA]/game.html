@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>N.E.R.D</title>
@@ -48,8 +48,8 @@
 						<p>Você perdeu!&hellip;</p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-danger">Sair</button>
-						<button type="button" class="btn btn-success" data-dismiss="modal">Reiniciar</button>
+						<button type="button" class="btn btn-danger" id="sairBtn">Sair</button>
+						<button type="button" class="btn btn-success" data-dismiss="modal" id="reiniciarBtn">Reiniciar</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -139,7 +139,9 @@
 
 
 		if(palavra.indexOf(" ") >= 0){
-			arrayLetra.push(" ");
+		    //arrayLetra.push(" ");
+		    palavra = palavra.replace(" ", "");
+		    
 		}
 
 
@@ -168,14 +170,28 @@
 		function verificaCaracter(caracter){
 			if(palavra.indexOf(caracter) >= 0){
 				//Encontrado
-				arrayLetra.push(caracter);
+				//arrayLetra.push(caracter);
 
-				if(palavra.length == arrayLetra.length){
-					$(document).ready(function(){
-						$("#myModal1").modal();
-					});
-				}
+				//if(palavra.length == arrayLetra.length){
+					
+			    //}
 
+                /*
+			    var count = 0;
+			    var aPalavra = palavra.split("");
+			    for (var i = 0; i < aPalavra.length; i++) {
+			        if (aPalavra[i] == caracter) {
+			            count++;
+			        }
+
+			    }*/
+			    while(palavra.indexOf(caracter) >= 0){
+			        palavra = palavra.replace(caracter, "");
+			    }
+
+
+
+			    document.write(palavra);
 			}
 			else{
 				//Não encontrado
@@ -230,11 +246,6 @@
 			id('entrada_1').focus();
 		}
 
-
-			/*
-				default: document.write("<img id='forca' src='images/00.png'/>");
-
-			}*/
 
 
 
