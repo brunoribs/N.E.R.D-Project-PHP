@@ -28,6 +28,14 @@ h1, h2{
 	right: 35%;
 }
 
+#dica{
+	width: 20%;
+	position: absolute;
+	right: 38%;
+    bottom: 25%;
+    color: #fff;
+}
+
 #tecladoForm{
 	width: 20%;
 	position: absolute;;
