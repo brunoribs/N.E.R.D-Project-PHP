@@ -69,8 +69,8 @@
 						<p>Você completou a palavra!&hellip;</p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-danger">Sair</button>
-						<button type="button" class="btn btn-success" data-dismiss="modal">Reiniciar</button>
+						<button type="button" class="btn btn-danger" id="sairBtn2">Sair</button>
+						<button type="button" class="btn btn-success" data-dismiss="modal" id="reiniciarBtn2">Reiniciar</button>
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
@@ -133,13 +133,12 @@
 
 		var tentativas = 0;
 		var palavra = "darth vader";
-		var arrayLetra = Array();
+		
 		
 
 
 
 		if(palavra.indexOf(" ") >= 0){
-		    //arrayLetra.push(" ");
 		    palavra = palavra.replace(" ", "");
 		    
 		}
@@ -170,35 +169,20 @@
 		function verificaCaracter(caracter){
 			if(palavra.indexOf(caracter) >= 0){
 				//Encontrado
-				//arrayLetra.push(caracter);
-
-				//if(palavra.length == arrayLetra.length){
-					
-			    //}
-
-                /*
-			    var count = 0;
-			    var aPalavra = palavra.split("");
-			    for (var i = 0; i < aPalavra.length; i++) {
-			        if (aPalavra[i] == caracter) {
-			            count++;
-			        }
-
-			    }*/
+				
 			    while(palavra.indexOf(caracter) >= 0){
 			        palavra = palavra.replace(caracter, "");
 			    }
 
 
 
-			    document.write(palavra);
 			}
 			else{
 				//Não encontrado
 				tentativas++;
 				changeImagem();
 
-				if(tentativas == 6){
+				if(tentativas >= 6){
 					$(document).ready(function(){
 						$("#myModal").modal();
 					});
@@ -206,11 +190,31 @@
 				
 				
 			}
+
+			if(palavra == ""){
+			    $(document).ready(function () {
+			        $("#myModal1").modal();
+			    });
+			}
 		}
 
 
 
+		$("#reiniciarBtn").click(function () {
+		    location.reload();
+		});
 
+		$("#sairBtn").click(function () {
+		    window.location.href = "http://www.google.com";
+		});
+
+		$("#reiniciarBtn2").click(function () {
+		    location.reload();
+		});
+
+		$("#sairBtn2").click(function () {
+		    window.location.href = "http://www.google.com";
+		});
 
 
 
