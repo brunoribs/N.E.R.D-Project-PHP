@@ -1,9 +1,9 @@
 * { margin: 0; padding: 0; border: 0; }
 input { background: #fff; border: 1px solid #ccc; padding: 6px;}
-#teclado { width: 400px; }
-#teclado fieldset { width: 300px; text-align: center; float: left; margin: 2px; }
+#teclado { width: 300px;}
+
 #teclado #numbers { float: right; width: 80px; }
-fieldset { margin: 5px; }
+fieldset { margin: 3px;}
 
 body{
 	background-color: #2F4F4F;
@@ -30,8 +30,17 @@ h1, h2{
 
 #tecladoForm{
 	width: 20%;
-	position: absolute;
-	right: 35%;
-	bottom: 5%;
+	position: absolute;;
+	right: 38%;
+	bottom: 2%;
 	margin: auto;
+}
+#teclado fieldset{
+	position: relative;
+	width: 300px;
+	right: 27%;
+	height: 10px;
+	bottom: 5%;
+  text-align:center; margin:25px;
+
 }
