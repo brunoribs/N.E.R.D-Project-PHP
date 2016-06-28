@@ -38,7 +38,7 @@ h1, h2{
 
 #tecladoForm{
 	width: 20%;
-	position: absolute;;
+	position: absolute;
 	right: 38%;
 	bottom: 2%;
 	margin: auto;
@@ -51,4 +51,13 @@ h1, h2{
 	bottom: 5%;
   text-align:center; margin:25px;
 
+}
+
+#jogarBtn{
+    position: relative;
+    left: 45%;
+    top: 200px;
+    width: 150px;
+    height: 91px;
+    background-image: url('../images/jogarBtn.png');
 }
