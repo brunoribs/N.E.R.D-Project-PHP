@@ -6,7 +6,10 @@ input { background: #fff; border: 1px solid #ccc; padding: 6px;}
 fieldset { margin: 3px;}
 
 body{
-	background-color: #2F4F4F;
+	background-image: url("../images/dicas/deathStar.png");
+	background-repeat: no-repeat;
+	background-color: cadetblue;
+	
 }
 
 h1, h2{
