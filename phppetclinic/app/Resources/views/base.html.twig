@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HanGeek</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/kbStyle.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/customStyle.css') }}">
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="container-fluid margin-header-item">
+                <a class="text-center font-giz font-size-dica margin-header-item" href="{{ path('homepage') }}">HanGeek</a>
+                <a class="text-center font-giz font-size-dica margin-header-item" href="{{ path('word') }}">{% trans %}Cadastro{% endtrans %}</a>
+                <a href="" data-toggle="modal" data-target="#creditsModal" class="text-center font-giz font-size-dica margin-header-item" title="Veja sobre a gente">Sobre</a>
+            </div>
+        {% block body %}{% endblock %}
+        <div class="language_switcher">
+            <ul>
+                <li>
+                    {% trans %}language.switcher{% endtrans %}:&nbsp;
+                </li>
+                <li>
+                    <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en'})) }}">
+                        {% trans %}language.en{% endtrans %}
+                    </a>&nbsp;|&nbsp;
+                </li>
+                <li>
+                    <a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'de'})) }}">
+                        {% trans %}language.de{% endtrans %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    {% block javascripts %}{% endblock %}
+</div>
+</body>
+</html>
