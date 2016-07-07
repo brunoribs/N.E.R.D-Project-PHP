@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>N.E.R.D</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/estilo1.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<header>
+		<a href="http://127.0.0.1:8000/en/word/new">Cadastrar Palavra</a>
+		<h1 class="titulo">Bem vindo ao HanGeek</h1>
+		<h2 class="titulo">O jogo da forca para o público nerd!</h2>
+	</header>
+	<main>
+	
+		<!--Modal Game Over -->
+		<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Game Over</h4>
+					</div>
+					<div class="modal-body">
+						<p>Você perdeu!&hellip;</p>
+					</div>
+					<div class="modal-footer">
+						
+						<button type="button" class="btn btn-success" data-dismiss="modal" id="reiniciarBtn">Reiniciar</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		
+		
+		
+		<!--Modal Game Win -->
+		<div class="modal fade" tabindex="-1" role="dialog" id="myModal1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Você completou a palavra!</h4>
+					</div>
+					<div class="modal-body">
+						<p>Darth Vader&hellip;</p>
+					</div>
+					<div class="modal-footer">
+						
+						<button type="button" class="btn btn-success" data-dismiss="modal" id="reiniciarBtn2">Reiniciar</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	
+	
+	
+	
+	
+	
+	
+	
+		<img class='forca' id='forca' src='images/00.png' alt="Imagem da forca" />
+
+        
+
+
+		<form action="#" method="post" id="tecladoForm">
+			<fieldset id="area">
+				<input type="text" name="entrada_1" id="entrada_1" />
+			</fieldset>
+			<fieldset id="teclado">
+
+				<fieldset>
+					<input type="button" name="q" value="q" />
+					<input type="button" name="w" value="w" />
+					<input type="button" name="e" value="e" />
+					<input type="button" name="r" value="r" />
+					<input type="button" name="t" value="t" />
+					<input type="button" name="y" value="y" />
+					<input type="button" name="u" value="u" />
+					<input type="button" name="i" value="i" />
+					<input type="button" name="o" value="o" />
+					<input type="button" name="p" value="p" />
+				</fieldset>
+				<fieldset>
+					<input type="button" name="a" value="a" />
+					<input type="button" name="s" value="s" />
+					<input type="button" name="d" value="d" />
+					<input type="button" name="f" value="f" />
+					<input type="button" name="g" value="g" />
+					<input type="button" name="h" value="h" />
+					<input type="button" name="j" value="j" />
+					<input type="button" name="k" value="k" />
+					<input type="button" name="l" value="l" />
+					<input type="button" name="ç" value="ç" />
+				</fieldset>
+				<fieldset>
+					<input type="button" name="z" value="z" />
+					<input type="button" name="x" value="x" />
+					<input type="button" name="c" value="c" />
+					<input type="button" name="v" value="v" />
+					<input type="button" name="b" value="b" />
+					<input type="button" name="n" value="n" />
+					<input type="button" name="m" value="m" />
+				</fieldset>
+			</fieldset>
+		</form>
+
+		<script>
+
+		var tentativas = 0;
+		var palavra = "darth vader";
+		
+		
+
+
+
+		if(palavra.indexOf(" ") >= 0){
+		    palavra = palavra.replace(" ", "");
+		    
+		}
+
+
+		function changeImagem(){
+			if(tentativas == 1){
+				document.getElementById("forca").src="images/01.png";
+			}
+			else if(tentativas == 2){
+				document.getElementById("forca").src="images/02.png";
+			}
+			else if(tentativas == 3){
+				document.getElementById("forca").src="images/03.png";
+			}
+			else if(tentativas == 4){
+				document.getElementById("forca").src="images/04.png";
+			}
+			else if(tentativas == 5){
+				document.getElementById("forca").src="images/05.png";
+			}
+			else if(tentativas == 6){
+				document.getElementById("forca").src="images/06.png";
+			}
+		}
+
+
+		function verificaCaracter(caracter){
+			if(palavra.indexOf(caracter) >= 0){
+				//Encontrado
+				
+			    while(palavra.indexOf(caracter) >= 0){
+			        palavra = palavra.replace(caracter, "");
+			    }
+
+
+
+			}
+			else{
+				//Não encontrado
+				tentativas++;
+				changeImagem();
+
+				if(tentativas >= 6){
+					$(document).ready(function(){
+						$("#myModal").modal();
+					});
+				}
+				
+				
+			}
+
+			if(palavra == ""){
+			    $(document).ready(function () {
+			        $("#myModal1").modal();
+			    });
+			}
+		}
+
+
+
+		$("#reiniciarBtn").click(function () {
+		    location.reload();
+		});
+
+		$("#sairBtn").click(function () {
+		    window.location.href = "index.html";
+		});
+
+		$("#reiniciarBtn2").click(function () {
+		    location.reload();
+		});
+
+		$("#sairBtn2").click(function () {
+		    window.location.href = "index.html";
+		});
+
+
+
+
+
+		function id( el ){
+			return document.getElementById( el );
+		}
+		function val( destino, valor ){
+			destino.value += valor;
+		}
+
+		
+
+
+		var focus = false;
+		window.onload = function(){
+
+
+			var botoes = id('teclado').getElementsByTagName('input');
+			for( var i=0; i<botoes.length; i++ ){
+				botoes[i].onclick = function(){
+				    if (!focus) {
+				        alert('coloque o foco em algum input');
+				        exit();
+				    }
+
+				    val(id(focus), this.value);				    
+
+					verificaCaracter(this.value);
+					id( focus ).focus();
+				}
+			}
+
+			var inputs = id('area').getElementsByTagName('input');
+			for( var i=0; i<inputs.length; i++ ){
+				inputs[i].onfocus = function(){
+				    focus = this.id;
+
+				   
+				}
+			}
+			id('entrada_1').focus();
+		}
+
+
+
+
+
+		</script>
+
+	</main>
+	<footer>
+
+	</footer>
+</body>
+</html>
